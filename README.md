@@ -1,3 +1,4 @@
+
 # Welcome to the IxDF UI Front-End Code Challenge!
 
 The main goal of this challenge is to get a sense of your coding style and choices.
@@ -11,6 +12,16 @@ We would merely like to get a more profound impression of how you write code.
 That also will allow us to have a more fruitful and constructive discussion at the technical interview.
 We’re not fans of white-boarding at interviews, so we’d much rather have some concrete code to talk about.
 We think that makes the interview much more enjoyable and productive.
+
+<p>To do:</p>
+<ol>
+    <li>Implement a <a href="https://zpl.io/V0KlGRQ" target="_blank">LessonNavigator</a></li>
+    <li>Implement a <a href="https://zpl.io/amQKr36" target="_blank">grid</a></li>
+    <li>Implement a <a href="https://zpl.io/VKrw1gW" target="_blank">basic page layout</a></li>
+    <li>Implement a breadcrumbs</li>
+    <li>Implement a simple quiz answer functionality that will update a state of the LessonNavigator</li>
+    <li>Share your awesome solution with us 🦄</li>
+</ol>
 
 
 ## Your challenge/task

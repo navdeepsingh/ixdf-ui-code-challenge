@@ -1,0 +1,61 @@
+@custom-media --large-up (width >= 1056px);
+
+:root {
+    --gridGap: 16px;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
+/* Container for most of the page content, consists only of columns */
+.gridContainer {
+    display: grid;
+    grid-template-areas: '. content .';
+    grid-template-columns: 16px 1fr 16px;
+    
+    @media (--large-up) {
+        grid-template-columns: 1fr 1024px 1fr;
+    }
+
+}
+
+.gridContent {
+    grid-area: content;
+}
+
+.row {
+    display: grid;
+    grid-gap: var(--gridGap);
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/* Helper classes */
+
+.zero-grid-row-gap {
+    grid-row-gap: 0;
+}
+
+.zero-grid-column-gap {
+    grid-column-gap: 0;
+}
+
+.sm\:zero-grid-row-gap{
+    @media (--small-only) {
+        grid-row-gap: 0;
+    }
+}
+
+.medium-large-grid-row-gap {
+    grid-row-gap: 24px;
+}
+
+/* Equal to 3 cols on large grid */
+.secondaryContentWidth {
+    max-width: 232px;
+    min-width: 232px;
+    width: 232px;
+}
