@@ -1,0 +1,37 @@
+{
+  "name": "ixdf-ui-code-challenge",
+  "description": "IxDF front-end UI code challenge",
+  "author": "IxDF community",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "postcss": "^8.1.10",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "start": "webpack serve"
+  },
+  "browserslist": {
+    "production": [
+      "last 4 Chrome versions",
+      "Firefox ESR",
+      "last 2 Edge versions",
+      "last 2 Safari versions",
+      "last 2 ChromeAndroid versions",
+      "last 4 iOS versions",
+      "last 2 FirefoxAndroid versions",
+      "last 2 Samsung versions"
+    ],
+    "development": [
+      "last 1 Chrome versions",
+      "last 1 Firefox versions",
+      "last 1 Safari versions"
+    ]
+  }
+}
