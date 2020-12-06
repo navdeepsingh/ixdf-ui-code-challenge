@@ -23,8 +23,21 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
-                                plugins: [['precss', 'postcss-preset-env']],
+                                plugins: [['precss', 'postcss-assets', 'postcss-inline-svg', 'postcss-preset-env']],
                             },
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true, // webpack@1.x
+                            disable: true, // webpack@2.x and newer
                         },
                     },
                 ],
