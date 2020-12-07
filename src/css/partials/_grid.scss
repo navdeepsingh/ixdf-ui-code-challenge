@@ -1,0 +1,45 @@
+@custom-media --small (width < 768px);
+@custom-media --medium (768px <= width <= 1055px);
+@custom-media --large-up (width >= 1056px);
+@custom-media --x-large (width >= 1200px);
+@custom-media --xx-large (width > 1440px);
+
+:root {
+    --gridGap: 16px;
+
+     @media (--medium) {
+        --gridGap: 24px;
+    }
+
+     @media (--large-up) {
+        --gridGap: 32px;
+    }
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;   
+    min-height: 100vh;
+}
+
+/* Container for most of the page content, consists only of columns */
+.gridContainer {
+    display: grid;
+    grid-template-areas: '. content .';
+    grid-template-columns: 16px 1fr 16px;
+    
+    @media (--large-up) {
+        grid-template-columns: 1fr 1024px 1fr;
+    }
+}
+
+.gridContent {
+    grid-area: content;
+}
+
+.row {
+    display: grid;
+    grid-gap: var(--gridGap);
+    grid-template-columns: repeat(12, 1fr);
+}
