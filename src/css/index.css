@@ -1,4 +1,4 @@
-@import "reset.scss";
-@import "mixins.scss";
-@import "grid.scss";
+@import "partials/_reset.scss";
+@import "partials/_mixins.scss";
+@import "partials/_grid.scss";
 @import "main.scss";

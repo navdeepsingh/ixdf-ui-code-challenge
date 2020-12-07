@@ -13,6 +13,7 @@ buttonShowNavigator.addEventListener('click', () => {
 
 buttonHideNavigator.addEventListener('click', () => {
     lessonNavigator.classList.remove('show');
+    lessonNavigator.classList.add('hide');
 });
 
 // Toggle Lessons
@@ -26,6 +27,39 @@ accordionHeaders.forEach((accordionHeader) => {
         target.hidden = expanded;
         if (!expanded) accordionListItem.classList.add('active');
         else accordionListItem.classList.remove('active');
-        // expanded ? accordionListItem.classList.remove(active);
     };
 });
+
+// Quiz questions validation
+const activeSubLesson = document.querySelector('aside ul li ul li.active');
+
+var totalQuestionSubmit = 0;
+
+const quizElements = [
+    {radio: 'questionOptions1', submit: 'submit1'},
+    {radio: 'questionOptions2', submit: 'submit2'},
+];
+
+quizElements.map((quizElement) => {
+    validationRadios(quizElement.radio, quizElement.submit);
+});
+
+function validationRadios(radios, submitButton) {
+    const button = document.getElementById(submitButton);
+    var radios = document.getElementsByName(radios);
+    radios.forEach((radio) => {
+        radio.onchange = () => {
+            button.removeAttribute('disabled');
+        };
+    });
+    // Submit Button
+    button.onclick = () => {
+        totalQuestionSubmit++;
+        button.classList.add('submitted');
+        button.innerText = 'Submitted';
+        if (totalQuestionSubmit === quizElements.length) {
+            activeSubLesson.firstElementChild.firstElementChild.focus();
+            activeSubLesson.classList.add('completed');
+        }
+    };
+}
