@@ -13,22 +13,37 @@
 <a class=skip_lnk href="#main-content">Skip to content</a>
 <div class="pageContainer">
     <header class="gridContainer">
-        <nav aria-label="Primary" class="gridContent">
-            <ul>
-                <li>
-                    <a href="">
-                        <picture>
-                            <source media="(min-width: 768px) and (max-width: 1055px)" srcset="https://public-media.interaction-design.org/images/idf-logo.svg">
-                            <img width="200" height="65" class="navigationHeaderLogo__image" src="https://public-media.interaction-design.org/images/idf-logo-full-expanded-hds.svg" alt="Interaction Design Foundation">
-                        </picture>
-                    </a>
-                </li>
-                <li><a href="">UX Courses</a></li>
-                <li><a href="">Career</a></li>
-                <li><a href="">Literature</a></li>
-                <li><a href="">About Us</a></li>
-            </ul>
-        </nav>
+        <div class="gridContent">
+            <div class="hamBurgerMenu">
+                <a href="" 
+                    id="hamburger-menu"
+                    title="Mobile Menu" 
+                    aria-expanded="false"
+                    aria-controls="primary-menu"
+                    data-hamburger-menu>
+                    <span>Mobile Menu</span>
+                </a>
+            </div>
+            <a href="" id="logo" title="Interaction Design Foundation">
+                <picture>
+                    <source media="(min-width: 768px) and (max-width: 1055px)" srcset="https://public-media.interaction-design.org/images/idf-logo.svg">
+                    <img width="200" height="65" src="https://public-media.interaction-design.org/images/idf-logo-full-expanded-hds.svg" alt="Interaction Design Foundation">
+                </picture>
+            </a>
+            <nav 
+                aria-label="Primary" 
+                id="primary-menu"
+                aria-labelledby="hamburger-menu"
+            >
+                <ul>                
+                    <li><a href="" title="UX Courses">UX Courses</a></li>
+                    <li><a href="" title="Career">Career</a></li>
+                    <li><a href="" title="Literature">Literature</a></li>
+                    <li><a href="" title="About Us">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
 
     <section class="gridContainer mainWrapper"> 
@@ -59,10 +74,10 @@
                                     <li><h4><a href="">How to earn your Course Certificate</a></h4></li>
                                 </ul>
                             </li>
-                            <li class="active attempted">
+                            <li class="attempted">
                                 <h3>
                                     <button id="lessonNavigator-header-2"
-                                        aria-expanded="true"
+                                        aria-expanded="false"
                                         aria-controls="lessonNavigator-panel-2"
                                         data-lesson-navigator-header>
                                     Accessibility Basics
@@ -70,6 +85,7 @@
                                 </h3>
                                 <ul id="lessonNavigator-panel-2" 
                                     aria-labelledby="lessonNavigator-header-2"
+                                    hidden
                                     >
                                     <li class="completed"><h4><a href="">Accessibility: Why It Matters</a></h4></li>
                                     <li class="optional"><h4><a href="">Discussion Exercise</a></h4></li>
@@ -218,7 +234,7 @@
                     </nav>        
                 </aside>
 
-                <main class="content">
+                <main class="content" data-main-content>
                     <nav class="breadcrumb" aria-label="Secondary">
                         <ul>
                             <li><a href="">UX Courses</a></li>

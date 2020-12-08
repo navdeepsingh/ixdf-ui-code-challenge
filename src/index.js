@@ -2,18 +2,27 @@ import css from './css/index.css';
 
 console.log('Project Loaded!');
 
-// Show/Hide Lesson Navigator
+// Define DOM Elements
 const buttonShowNavigator = document.querySelector('[data-show-lesson-navigator]');
 const buttonHideNavigator = document.querySelector('[data-hide-lesson-navigator]');
 const lessonNavigator = document.querySelector('[data-lesson-navigator]');
+const activeSubLesson = document.querySelector('aside ul li ul li.active');
+const mainContent = document.querySelector('[data-main-content');
+const hamBurgerMenu = document.querySelector('[data-hamburger-menu]');
+const mobileMenu = document.querySelector('header nav');
 
+// Show/Hide Lesson Navigator
 buttonShowNavigator.addEventListener('click', () => {
     lessonNavigator.classList.add('show');
+    buttonShowNavigator.classList.remove('show');
+    mainContent.classList.remove('hidden-navigator');
 });
 
 buttonHideNavigator.addEventListener('click', () => {
     lessonNavigator.classList.remove('show');
     lessonNavigator.classList.add('hide');
+    buttonShowNavigator.classList.add('show');
+    mainContent.classList.add('hidden-navigator');
 });
 
 // Toggle Lessons
@@ -31,8 +40,6 @@ accordionHeaders.forEach((accordionHeader) => {
 });
 
 // Quiz questions validation
-const activeSubLesson = document.querySelector('aside ul li ul li.active');
-
 var totalQuestionSubmit = 0;
 
 const quizElements = [
@@ -63,3 +70,12 @@ function validationRadios(radios, submitButton) {
         }
     };
 }
+
+// Mobile Menu
+hamBurgerMenu.onclick = (e) => {
+    e.preventDefault();
+    let expanded = hamBurgerMenu.getAttribute('aria-expanded') === 'true' || false;
+    hamBurgerMenu.setAttribute('aria-expanded', !expanded);
+    if (!expanded) mobileMenu.classList.add('show');
+    else mobileMenu.classList.remove('show');
+};

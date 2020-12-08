@@ -1,4 +1,7 @@
-@import "partials/_reset.scss";
-@import "partials/_mixins.scss";
-@import "partials/_grid.scss";
+/** Internal dependencies. */
+@import "partials/reset.scss";
+@import "partials/mixins.scss";
+@import "partials/grid.scss";
+
+/** Main css styles file */
 @import "main.scss";
