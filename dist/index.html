@@ -5,18 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Solution for IxDF code challenge!">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Source+Code+Pro|Source+Sans+Pro:400,400i,700&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>Welcome to IxDF code challenge!</title>
+    <title>Welcome to IxDF code challenge: Solution</title>
 </head>
 <body>
 <a class=skip_lnk href="#main-content">Skip to content</a>
 <div class="pageContainer">
     <header class="gridContainer">
-        <div class="gridContent">
+        <div class="gridContent headerWrapper">
             <div class="hamBurgerMenu">
-                <a href="" 
-                    id="hamburger-menu"
+                <a href="/" 
                     title="Mobile Menu" 
                     aria-expanded="false"
                     aria-controls="primary-menu"
@@ -24,7 +24,7 @@
                     <span>Mobile Menu</span>
                 </a>
             </div>
-            <a href="" id="logo" title="Interaction Design Foundation">
+            <a href="/" id="logo" title="Interaction Design Foundation">
                 <picture>
                     <source media="(min-width: 768px) and (max-width: 1055px)" srcset="https://public-media.interaction-design.org/images/idf-logo.svg">
                     <img width="200" height="65" src="https://public-media.interaction-design.org/images/idf-logo-full-expanded-hds.svg" alt="Interaction Design Foundation">
@@ -33,17 +33,15 @@
             <nav 
                 aria-label="Primary" 
                 id="primary-menu"
-                aria-labelledby="hamburger-menu"
             >
                 <ul>                
-                    <li><a href="" title="UX Courses">UX Courses</a></li>
-                    <li><a href="" title="Career">Career</a></li>
-                    <li><a href="" title="Literature">Literature</a></li>
-                    <li><a href="" title="About Us">About Us</a></li>
+                    <li><a href="/" title="UX Courses">UX Courses</a></li>
+                    <li><a href="/" title="Career">Career</a></li>
+                    <li><a href="/" title="Literature">Literature</a></li>
+                    <li><a href="/" title="About Us">About Us</a></li>
                 </ul>
             </nav>
         </div>
-
     </header>
 
     <section class="gridContainer mainWrapper"> 
@@ -55,13 +53,13 @@
                     <button class="hideLessonNavigator" data-hide-lesson-navigator>Hide</button>
                     <nav aria-label="Lesson">   
                         <ul>
-                            <li class="completed">
+                            <li class="completed" data-lesson-navigator-list>
                                 <!-- Heading -->
                                 <h3>
                                     <button id="lessonNavigator-header-1"
                                         aria-expanded="false"
                                         aria-controls="lessonNavigator-panel-1"
-                                        data-lesson-navigator-header>
+                                        >
                                     Welcome and Introduction
                                     </button>
                                 </h3>
@@ -69,165 +67,158 @@
                                 <ul id="lessonNavigator-panel-1" 
                                     aria-labelledby="lessonNavigator-header-1"
                                     hidden>
-                                    <li><h4><a href="">An introduction to courses from the Interaction Design Foundation</a></h4></li>
-                                    <li><h4><a href="">Let our community help you</a></h4></li>
-                                    <li><h4><a href="">How to earn your Course Certificate</a></h4></li>
+                                    <li><h4><a href="/">An introduction to courses from the Interaction Design Foundation</a></h4></li>
+                                    <li><h4><a href="/">Let our community help you</a></h4></li>
+                                    <li><h4><a href="/">How to earn your Course Certificate</a></h4></li>
                                 </ul>
                             </li>
-                            <li class="attempted">
+                            <li class="attempted" data-lesson-navigator-list>
                                 <h3>
                                     <button id="lessonNavigator-header-2"
                                         aria-expanded="false"
-                                        aria-controls="lessonNavigator-panel-2"
-                                        data-lesson-navigator-header>
+                                        aria-controls="lessonNavigator-panel-2">
                                     Accessibility Basics
                                     </button>
                                 </h3>
                                 <ul id="lessonNavigator-panel-2" 
-                                    aria-labelledby="lessonNavigator-header-2"
+                                    aria-labelledby="lessonNavigator-header-2"                                    
                                     hidden
                                     >
-                                    <li class="completed"><h4><a href="">Accessibility: Why It Matters</a></h4></li>
-                                    <li class="optional"><h4><a href="">Discussion Exercise</a></h4></li>
-                                    <li class="active"><h4><a href="">Ten Principles of Accessibility for Web and Mobile Design</a></h4></li>
-                                    <li><h4><a href="">How Accessibility Impacts Usability and SEO</a></h4></li>
-                                    <li><h4><a href="">Interview: The Impact of Poor Accessibility</a></h4></li>
-                                    <li><h4><a href="">Experiencing Accessibility Issues With Each Disability Type</a></h4></li>
-                                    <li><h4><a href="">What Poor and Good Accessibility Looks Like</a></h4></li>
+                                    <li class="completed"><h4><a href="/">Accessibility: Why It Matters</a></h4></li>
+                                    <li class="optional"><h4><a href="/">Discussion Exercise</a></h4></li>
+                                    <li class="active"><h4><a href="/">Ten Principles of Accessibility for Web and Mobile Design</a></h4></li>
+                                    <li><h4><a href="/">How Accessibility Impacts Usability and SEO</a></h4></li>
+                                    <li><h4><a href="/">Interview: The Impact of Poor Accessibility</a></h4></li>
+                                    <li><h4><a href="/">Experiencing Accessibility Issues With Each Disability Type</a></h4></li>
+                                    <li><h4><a href="/">What Poor and Good Accessibility Looks Like</a></h4></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li data-lesson-navigator-list>
                                 <h3>
                                     <button id="lessonNavigator-header-3"
                                         aria-expanded="false"
-                                        aria-controls="lessonNavigator-panel-3"
-                                        data-lesson-navigator-header>
+                                        aria-controls="lessonNavigator-panel-3">
                                     Steps to Gaining Compliance
                                     </button>
                                 </h3>
                                 <ul id="lessonNavigator-panel-3" 
                                     aria-labelledby="lessonNavigator-header-3"
                                     hidden>
-                                    <li><h4><a href="">Using Automated Tools: Pros and Cons</a></h4></li>
-                                    <li><h4><a href="">Following the Guidelines: Pros and Cons</a></h4></li>
-                                    <li><h4><a href="">Getting Compliant: Section 508 Issues and Lessons</a></h4></li>
-                                    <li><h4><a href="">Identifying Your Compliance Requirements: A, AA, AAA</a></h4></li>
-                                    <li><h4><a href="">How to Use WCAG 2.0 Guidelines: Theory vs Practice</a></h4></li>
-                                    <li><h4><a href="">Discussion Exercise</a></h4></li>
+                                    <li><h4><a href="/">Using Automated Tools: Pros and Cons</a></h4></li>
+                                    <li><h4><a href="/">Following the Guidelines: Pros and Cons</a></h4></li>
+                                    <li><h4><a href="/">Getting Compliant: Section 508 Issues and Lessons</a></h4></li>
+                                    <li><h4><a href="/">Identifying Your Compliance Requirements: A, AA, AAA</a></h4></li>
+                                    <li><h4><a href="/">How to Use WCAG 2.0 Guidelines: Theory vs Practice</a></h4></li>
+                                    <li><h4><a href="/">Discussion Exercise</a></h4></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li data-lesson-navigator-list>
                                 <h3>
                                     <button id="lessonNavigator-header-4"
                                         aria-expanded="false"
-                                        aria-controls="lessonNavigator-panel-4"
-                                        data-lesson-navigator-header>
+                                        aria-controls="lessonNavigator-panel-4">
                                     Optimizing Your Code
                                     </button>
                                 </h3>
                                 <ul id="lessonNavigator-panel-4" 
                                     aria-labelledby="lessonNavigator-header-4"
                                     hidden>
-                                    <li><h4><a href="">Code Optimization Basics and Opportunities</a></h4></li>
-                                    <li><h4><a href="">Images: All about Alt + Contrast</a></h4></li>
-                                    <li><h4><a href="">Keyboard</a></h4></li>
-                                    <li><h4><a href="">Focus Control + Layout Considerations For UX Designers</a></h4></li>
-                                    <li><h4><a href="">Forms, Tables and Search</a></h4></li>
-                                    <li><h4><a href="">3rd Party Content</a></h4></li>
-                                    <li><h4><a href="">Pop Ups + Iframes</a></h4></li>
-                                    <li><h4><a href="">HTML5, CSS + ARIA</a></h4></li>
-                                    <li><h4><a href="">ARIA Markup</a></h4></li>
-                                    <li><h4><a href="">JavaScript</a></h4></li>
-                                    <li><h4><a href="">Dynamic Content: Infographics, Animations, Audio Descriptions, Video, Live Events</a></h4></li>
-                                    <li><h4><a href="">Designing Accessible Navigation</a></h4></li>
-                                    <li><h4><a href="">Recap</a></h4></li>
-                                    <li><h4><a href="">Exercise: Accessibility Analysis</a></h4></li>
+                                    <li><h4><a href="/">Code Optimization Basics and Opportunities</a></h4></li>
+                                    <li><h4><a href="/">Images: All about Alt + Contrast</a></h4></li>
+                                    <li><h4><a href="/">Keyboard</a></h4></li>
+                                    <li><h4><a href="/">Focus Control + Layout Considerations For UX Designers</a></h4></li>
+                                    <li><h4><a href="/">Forms, Tables and Search</a></h4></li>
+                                    <li><h4><a href="/">3rd Party Content</a></h4></li>
+                                    <li><h4><a href="/">Pop Ups + Iframes</a></h4></li>
+                                    <li><h4><a href="/">HTML5, CSS + ARIA</a></h4></li>
+                                    <li><h4><a href="/">ARIA Markup</a></h4></li>
+                                    <li><h4><a href="/">JavaScript</a></h4></li>
+                                    <li><h4><a href="/">Dynamic Content: Infographics, Animations, Audio Descriptions, Video, Live Events</a></h4></li>
+                                    <li><h4><a href="/">Designing Accessible Navigation</a></h4></li>
+                                    <li><h4><a href="/">Recap</a></h4></li>
+                                    <li><h4><a href="/">Exercise: Accessibility Analysis</a></h4></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li data-lesson-navigator-list>
                                 <h3>
                                     <button id="lessonNavigator-header-5"
                                         aria-expanded="false"
-                                        aria-controls="lessonNavigator-panel-5"
-                                        data-lesson-navigator-header>
+                                        aria-controls="lessonNavigator-panel-5">
                                     Meeting Accessibility Design Challenges
                                     </button>
                                 </h3>
                                 <ul id="lessonNavigator-panel-5" 
                                     aria-labelledby="lessonNavigator-header-5"
                                     hidden>
-                                    <li><h4><a href="">Toward Accessible Interaction Design</a></h4></li>
-                                    <li><h4><a href="">Discussion Exercise</a></h4></li>
-                                    <li><h4><a href="">Interview: Visual Bias e.g. Maps</a></h4></li>
-                                    <li><h4><a href="">Discussion Exercise</a></h4></li>
-                                    <li><h4><a href="">Web Site and Web Application Issues and Tips</a></h4></li>
-                                    <li><h4><a href="">Interview: Social Media Accessibility Experiences</a></h4></li>
-                                    <li><h4><a href="">Mobile Accessibility Issues and Tips</a></h4></li>
-                                    <li><h4><a href="">VR/AR Accessibility Issues and Tips</a></h4></li>
-                                    <li><h4><a href="">Plain English and Copywriting Tips for Inclusive Design</a></h4></li>
-                                    <li><h4><a href="">PDF Accessibility and Document Accessibility Experiences</a></h4></li>
-                                    <li><h4><a href="">Elderly and Senior Users</a></h4></li>
-                                    <li><h4><a href="">Recap</a></h4></li>
+                                    <li><h4><a href="/">Toward Accessible Interaction Design</a></h4></li>
+                                    <li><h4><a href="/">Discussion Exercise</a></h4></li>
+                                    <li><h4><a href="/">Interview: Visual Bias e.g. Maps</a></h4></li>
+                                    <li><h4><a href="/">Discussion Exercise</a></h4></li>
+                                    <li><h4><a href="/">Web Site and Web Application Issues and Tips</a></h4></li>
+                                    <li><h4><a href="/">Interview: Social Media Accessibility Experiences</a></h4></li>
+                                    <li><h4><a href="/">Mobile Accessibility Issues and Tips</a></h4></li>
+                                    <li><h4><a href="/">VR/AR Accessibility Issues and Tips</a></h4></li>
+                                    <li><h4><a href="/">Plain English and Copywriting Tips for Inclusive Design</a></h4></li>
+                                    <li><h4><a href="/">PDF Accessibility and Document Accessibility Experiences</a></h4></li>
+                                    <li><h4><a href="/">Elderly and Senior Users</a></h4></li>
+                                    <li><h4><a href="/">Recap</a></h4></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li data-lesson-navigator-list>
                                 <h3>
                                     <button id="lessonNavigator-header-6"
                                         aria-expanded="false"
-                                        aria-controls="lessonNavigator-panel-6"
-                                        data-lesson-navigator-header>
+                                        aria-controls="lessonNavigator-panel-6">
                                     Inclusive Design Strategies and Tactics
                                     </button>
                                 </h3>
                                 <ul id="lessonNavigator-panel-6" 
                                     aria-labelledby="lessonNavigator-header-6"
                                     hidden>
-                                    <li><h4><a href="">Approaching Inclusive Design and Compliance</a></h4></li>
-                                    <li><h4><a href="">Identify Your Audience: Disability Personas</a></h4></li>
-                                    <li><h4><a href="">Interview: Accessibility Needs to Be Built into Design and Dev from the Start</a></h4></li>
-                                    <li><h4><a href="">Discussion Exercise</a></h4></li>
-                                    <li><h4><a href="">Building an Accessibility Program in Your Organization</a></h4></li>
-                                    <li><h4><a href="">ROI of Accessibility</a></h4></li>
-                                    <li><h4><a href="">Recap</a></h4></li>
+                                    <li><h4><a href="/">Approaching Inclusive Design and Compliance</a></h4></li>
+                                    <li><h4><a href="/">Identify Your Audience: Disability Personas</a></h4></li>
+                                    <li><h4><a href="/">Interview: Accessibility Needs to Be Built into Design and Dev from the Start</a></h4></li>
+                                    <li><h4><a href="/">Discussion Exercise</a></h4></li>
+                                    <li><h4><a href="/">Building an Accessibility Program in Your Organization</a></h4></li>
+                                    <li><h4><a href="/">ROI of Accessibility</a></h4></li>
+                                    <li><h4><a href="/">Recap</a></h4></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li data-lesson-navigator-list>
                                 <h3>
                                     <button id="lessonNavigator-header-7"
                                         aria-expanded="false"
-                                        aria-controls="lessonNavigator-panel-7"
-                                        data-lesson-navigator-header>
+                                        aria-controls="lessonNavigator-panel-7">
                                     Accessibility Testing
                                     </button>
                                 </h3>
                                 <ul id="lessonNavigator-panel-7" 
                                     aria-labelledby="lessonNavigator-header-7"
                                     hidden>
-                                    <li><h4><a href="">How Does Accessibility Testing Differ From Other Kinds of Testing?</a></h4></li>
-                                    <li><h4><a href="">Assistive Technologies: Test Tools</a></h4></li>
-                                    <li><h4><a href="">Accessibility Testing: How to Conduct Access Testing</a></h4></li>
-                                    <li><h4><a href="">Tips for Recruiting Users; Moderating Tests: Assessing and Taking Action on Feedback</a></h4></li>
-                                    <li><h4><a href="">Interview: Accessibility Testing in Action</a></h4></li>
-                                    <li><h4><a href="">Quality of Accessible Experience: How Far Should You Go?</a></h4></li>
-                                    <li><h4><a href="">Discussion Exercise</a></h4></li>
-                                    <li><h4><a href="">Evaluating Your Accessibility Level: Feeling Confident With Accessibility Optimization</a></h4></li>
+                                    <li><h4><a href="/">How Does Accessibility Testing Differ From Other Kinds of Testing?</a></h4></li>
+                                    <li><h4><a href="/">Assistive Technologies: Test Tools</a></h4></li>
+                                    <li><h4><a href="/">Accessibility Testing: How to Conduct Access Testing</a></h4></li>
+                                    <li><h4><a href="/">Tips for Recruiting Users; Moderating Tests: Assessing and Taking Action on Feedback</a></h4></li>
+                                    <li><h4><a href="/">Interview: Accessibility Testing in Action</a></h4></li>
+                                    <li><h4><a href="/">Quality of Accessible Experience: How Far Should You Go?</a></h4></li>
+                                    <li><h4><a href="/">Discussion Exercise</a></h4></li>
+                                    <li><h4><a href="/">Evaluating Your Accessibility Level: Feeling Confident With Accessibility Optimization</a></h4></li>
                                 </ul>
                             </li>
-                            <li class="optional">
+                            <li class="optional" data-lesson-navigator-list>
                                 <h3>
                                     <button id="lessonNavigator-header-8"
                                         aria-expanded="false"
-                                        aria-controls="lessonNavigator-panel-8"
-                                        data-lesson-navigator-header>
+                                        aria-controls="lessonNavigator-panel-8">
                                     Course Certificate, Final Networking, and Course Wrap-up
                                     </button>
                                 </h3>
                                 <ul id="lessonNavigator-panel-8" 
                                     aria-labelledby="lessonNavigator-header-8"
                                     hidden>
-                                    <li><h4><a href="">Get Your Course Certificate</a></h4></li>
-                                    <li><h4><a href="">Course Evaluation</a></h4></li>
-                                    <li><h4><a href="">Continue Your Professional Growth</a></h4></li>
+                                    <li><h4><a href="/">Get Your Course Certificate</a></h4></li>
+                                    <li><h4><a href="/">Course Evaluation</a></h4></li>
+                                    <li><h4><a href="/">Continue Your Professional Growth</a></h4></li>
                                 </ul>
                             </li>
                         </ul>
@@ -237,8 +228,8 @@
                 <main class="content" data-main-content>
                     <nav class="breadcrumb" aria-label="Secondary">
                         <ul>
-                            <li><a href="">UX Courses</a></li>
-                            <li><a href="">Accessibility: How to Design for All</a></li>
+                            <li><a href="/">UX Courses</a></li>
+                            <li><a href="/">Accessibility: How to Design for All</a></li>
                             <li>Lesson 1.3</li>
                         </ul>
                     </nav>
@@ -314,8 +305,8 @@
                         </div>
                     </div>
                     <div class="pagination">
-                        <a href="">Previous Lesson</a>
-                        <a href="">Next Lesson</a>
+                        <a href="/">Previous Lesson</a>
+                        <a href="/">Next Lesson</a>
                     </div>
                 </main>
             </div>        
@@ -325,7 +316,7 @@
     <footer class="gridContainer">
         <nav class="gridContent" aria-label="Footer">
             <ul>
-                <li><a href="">Terms of Use / Privacy</a></li>
+                <li><a href="/">Terms of Use / Privacy</a></li>
             </ul>
         </nav>
     </footer>

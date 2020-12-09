@@ -1,9 +1,14 @@
+/* ##############################################*/
+/* ########### Main CSS File ####################*/
+/* ########### Author: Navdeep Singh ############*/
+/* ##############################################*/
 :root {
   --font-size-default: 18px;
   --font-serif: 'Merriweather', georgia, serif;
   --font-sans-serif: 'Source Sans Pro', arial, sans-serif;
   --font-monospace: 'Source Code Pro', monospace;  
   --font-awesome: 'FontAwesome';  
+
   --neutral-04: #bcbcbc;
   --accent-01: #457205;
   --neutral-06: #2b2b2b;
@@ -13,14 +18,36 @@
   --brand-01: #009cde;
   --black: #2b2b2b;
   --grey: #f9f9f9;
-  --main-content-padding-top: 64px;
-  --connector-circle-size: 18px; 
+
+  --main-content-padding-top: 64px;  
   --parent-spacing: 16px;
+  --line-height: 1.2;
+  --offgrid-navigator-width: 232px;
+
+  --connector-circle-size: 18px; 
+  --connector-bottom-padding: 25px;
+  --connector-curve-box-width: 8px;
+  --connector-top-left-curve-height: 107%;
+  --connector-bottom-right-curve-height: 106%;
+
+  --icon-transition: all 300ms ease-in;
+  --menu-transition: all 300ms ease-out;
+
+  --header-box-shadow: 0 8px 16px 0 hsla(0,0%,42%,.1);
+  --button-box-shadow: 0 2px 8px 0 rgba(0, 123, 171, 0.5);
+  --button-submitted-box-shadow: 0 2px 8px 0 rgba(var(--accent-01), 0.5);
+
   box-sizing: border-box;
 
   @media (--small) {
     --font-size-default: 16px;
     --main-content-padding-top: 76px;
+    --connector-top-left-curve-height: 121%;
+    --connector-bottom-right-curve-height: 110%;    
+  }
+
+  @media (--medium) {
+    --connector-bottom-right-curve-height: 103%;
   }
 }
 
@@ -34,138 +61,142 @@ body {
   font-family: var(--font-sans-serif);  
   font-size: var(--font-size-default);
 }
-
-/* Primary Navigation */
+/* ###########################################*/
+/* ###########Header Styles Start ############*/
+/* ###########################################*/
 header {
-  margin: 0.8em 0;
+  box-shadow: var(--header-box-shadow);
 
-  > div {
+  .headerWrapper {
     @include flex;
+    padding: 0.4em 0;
 
     @media (--small) {
       display: grid;
       grid-template-columns: 2fr 10fr;
     }
-  }
+    
+    /* Hamburger Menu Styles*/
+    .hamBurgerMenu {
+      display: none;
 
-  .hamBurgerMenu {
-    display: none;
-
-    @media (--small) {
-      @include flex;
-      justify-content: center;
-      align-items: center;      
-    }
-
-    a {
-      display: block;
-      position: relative;
-      width: 20px;
-      height: 18px;
-      margin: 1.2em; 
-      @include iconTransitions;
-
-      span{   
-        $top: calc((18px / 2) - 1px);
-        @include hamBurgerMenu($top);
-        text-indent: -99999px;        
-      }    
-      
-      &::before {
-        @include hamBurgerMenu;
+      @media (--small) {
+        @include flex;
+        justify-content: center;
+        align-items: center;      
       }
 
-      &::after {
-        @include hamBurgerMenu(0, true);
-      }
-
-      /* Show cross when menu opened */
-      &[aria-expanded=true] {
-        span{
-          opacity: 0;
-        }
-        &::before {
-          transform: rotate(53deg);
-          transform-origin: 0px;
-        }  
-        &::after {
-          transform: rotate(-53deg);
-          transform-origin: 0px;
-        }          
-      }
-    }
-  }
-
-  nav {
-    @include iconTransitions;
-
-    @media (--small) { 
-      display: none;            
-
-      &.show {
+      a {
         display: block;
-      }      
+        position: relative;
+        width: 20px;
+        height: 18px;
+        margin: 1.2em; 
+        transition: var(--icon-transition);
 
-      grid-column: span 2;
+        span{   
+          will-change: opacity;
+          $top: calc((18px / 2) - 1px);
+          @include hamBurgerMenu($top);
+          text-indent: -99999px;                   
+        }    
+        
+        &::before {
+          will-change: transform;       
+          @include hamBurgerMenu;
+        }
+
+        &::after {
+          will-change: transform;       
+          @include hamBurgerMenu(0, true);
+        }
+
+        /* Show cross when menu opened */
+        &[aria-expanded=true] {
+          span{
+            opacity: 0;
+          }
+          &::before {
+            transform: rotate(53deg);
+            transform-origin: 0px;
+          }  
+          &::after {
+            transform: rotate(-53deg);
+            transform-origin: 0px;
+          }          
+        }
+      }
     }
 
-    ul {
-      @include flex;
-      flex-direction: row;  
-      align-items: center;
-      
-      margin: 0;
-      padding: 0;
-      list-style: none;  
-
+    nav {
       @media (--small) { 
-        flex-direction: column;
-        height: auto;
+        display: none;            
+
+        &.show {
+          display: block;
+        }      
+
+        grid-column: span 2;
       }
 
-      li {
-        display: inline-block;
-        padding-left: 32px;
+      ul {
+        @include flex;
+        flex-direction: row;  
+        align-items: center;
+        height: 100%;
 
         @media (--small) { 
-          width: 100%;
-          text-align: center;
-          padding: 0.1em;
+          flex-direction: column;
+          height: auto;
         }
 
-        a {
-          display: block;
-          position: relative;
-          padding: 0.3em 0;
-          text-decoration: none;
-          color: var(--black); 
-               
+        li {
+          display: inline-block;
+          padding-left: 32px;
 
-          &:after{
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 0;
-            background-color: var(--brand-02);
-            transition: all 250ms ease-out; 
+          @media (--small) { 
+            width: 100%;
+            text-align: center;
+            padding: 0.1em;
           }
 
-          &:hover {
-            color: var(--brand-01);
+          a {
+            display: block;
+            position: relative;
+            padding: 0.3em 0;
+            text-decoration: none;
+            color: var(--black); 
 
-            &::after {
-              width: 100%;
+            &:after{
+              content: '';
+              position: absolute;
+              left: calc(100% / 2);
+              bottom: 0;
+              height: 2px;
+              width: 0;
+              background-color: var(--brand-02);
+              transition: var(--menu-transition);
             }
-          }
-        }  
+
+            &:hover {
+              color: var(--brand-01);
+
+              &::after {
+                left: 0;
+                width: 100%;
+              }
+            }
+          }  
+        }
       }
     }
-  }
+  }  
 }
+/*############# Header Styles End #############*/
 
-/* Button Styles */
+/* ###########################################*/
+/* ########### Buttons Styles Start ############*/
+/* ###########################################*/
 button {
   font-family: var(--font-sans-serif);
   font-size: var(--font-size-default);
@@ -181,7 +212,7 @@ button {
     @include btnNavigatorToggle;      
     padding-left: 18px; 
     color: var(--brand-02);
-    @include iconTransitions;
+    transition: var(--icon-transition);
 
     &.show{
       display: block;
@@ -199,7 +230,7 @@ button {
       padding-left: 0px;      
       left: 0;
       top: 2px;
-      @include iconTransitions;
+      transition: var(--icon-transition);
     }
 
     &:hover {
@@ -224,7 +255,7 @@ button {
       padding-left: 4px;      
       left: 0;
       top: 2px;
-      @include iconTransitions;
+      transition: var(--icon-transition);
     }
 
     &:hover {
@@ -234,8 +265,11 @@ button {
     }
   }
 }
+/*############# Button Styles End #############*/
 
-/** Breadcrumb Styles */
+/* ###########################################*/
+/* ###### Breadcrumb Styles Start ############*/
+/* ###########################################*/
 nav.breadcrumb {
   ul {
     @include flex;
@@ -267,21 +301,22 @@ nav.breadcrumb {
         padding-right: 8px;
 
         &:hover {
-          text-decoration: underline;
+          text-decoration: none;
         }
       }
     }
   }
 }
+/*############# Breadcrumb Styles End #############*/
 
-/*Lesson Navigator*/
+/* #################################################*/
+/* ###### Lesson Navigator Styles Start ############*/
+/* #################################################*/
 aside {
   grid-column: span 3;
-  padding-bottom: 500px;
 
   @media (--small) {
     @include offGrid; 
-    height: 100%;
     transform: translateX(-120%);
     transition: all 0.5s ease-in;
     background-color: var(--grey);
@@ -299,7 +334,7 @@ aside {
 
   @media (--x-large) {
     @include offGrid; 
-    width: 232px;
+    width: calc(var(--offgrid-navigator-width) + var(--parent-spacing) );
     padding-top: var(--main-content-padding-top);
   }
 
@@ -307,7 +342,7 @@ aside {
     margin: 0 0 8px;
     font-size: 28.1px;
     font-weight: bold;    
-    line-height: 1.2;
+    line-height: var(--line-height);
     letter-spacing: -0.25px;
     color: var(--black);
   }
@@ -323,9 +358,9 @@ aside {
       grid-template-columns: var(--connector-circle-size) 1fr;
       padding-right: 0.8em;
       padding-bottom: 25px;
-      line-height: 1.2;
+      line-height: var(--line-height);
 
-      /* circle icon status styles */
+      /* Circle connector status styles */
       &.optional {
         &::before {
           border-style: dashed;
@@ -337,7 +372,6 @@ aside {
           border-color: var(--black);
         }
       }
-
 
       &.attempted {
         &::before {
@@ -416,14 +450,14 @@ aside {
             content: '';        
             left: -9px;
             top: 0px; /** reset from top 0*/
-            width: 6px;
-            height: 107%;
+            width: var(--connector-curve-box-width);
+            height: var(--connector-top-left-curve-height);
             border: 2px solid; 
             border-radius: 0 0 0 7px;
             border-top: none;
             border-right: none;
             border-color: var(--neutral-04);
-            background-color: white;
+            background-color: var(--grey);
           }
           button {
             font-weight: 700;
@@ -437,7 +471,7 @@ aside {
 
         button {          
           text-align: left;          
-          line-height: 1.2;
+          line-height: var(--line-height);
           padding-right: 0.8em;
 
           &:before {
@@ -489,10 +523,10 @@ aside {
          &::after{
           content: "";
           position: absolute;
-          left: 8px;
-          bottom: -26px;
-          width: 8px;
-          height: 36px; /** Fixed height for curved connector */
+          left: var(--connector-curve-box-width);
+          bottom: calc(-1 * (var(--connector-circle-size) + var(--connector-bottom-padding)));
+          width: var(--connector-curve-box-width);
+          height: calc(var(--connector-circle-size) + var(--connector-bottom-padding)); /** Fixed height for curved connector */
           border: 2px solid; 
           border-radius: 6px 0 0 0;
           border-right: none;
@@ -513,9 +547,9 @@ aside {
               content: "";
               position: absolute;
               left: 2px;
-              bottom: -18px;
-              width: 8px;
-              height: 41%; 
+              top: 0;
+              width: var(--connector-curve-box-width);
+              height: var(--connector-bottom-right-curve-height); 
               border: 2px solid; 
               border-radius: 0 0 6px 0;
               border-left: none;
@@ -530,7 +564,7 @@ aside {
             &::after{
               content: "";
               position: absolute;
-              left: 8px;
+              left: var(--connector-curve-box-width);
               top: 18px;
               width: 2px;
               height: 100%;        
@@ -561,14 +595,15 @@ aside {
     }
   }
 }
+/* ###### Lesson Navigator Styles End ############*/
 
-
-/* Content Styles*/
+/* #################################################*/
+/* ############### Content Styles Start ############*/
+/* #################################################*/
 .mainWrapper {
   position: relative;
   background-color: var(--grey);
-  padding-top: var(--main-content-padding-top);
-  
+  padding-top: var(--main-content-padding-top);  
 }
 
 .content {
@@ -590,7 +625,7 @@ aside {
   &Wrapper {
     h1 {
       font-size: 2.8em;
-      line-height: 1.2em;
+      line-height: var(--line-height);
       font-weight: 700;
       padding: 8px 0 3px 0;
     }
@@ -608,7 +643,11 @@ aside {
 
     h3, p, ul, ol {
       font-family: var(--font-serif);
-      line-height: 32px;
+      line-height: 1.8;
+    }
+
+    p {
+      text-align: justify;
     }
 
     ol {
@@ -666,12 +705,12 @@ aside {
         &:not([disabled]) {
           background-color: var(--brand-01);
           color: var(--neutral-01);
-          box-shadow: 0 2px 8px 0 rgba(0, 123, 171, 0.5);
+          box-shadow: var(--button-box-shadow);
         }
 
         &.submitted {
           background-color: var(--accent-01);
-          box-shadow: 0 2px 8px 0 rgba(var(--accent-01), 0.5);
+          box-shadow: var(--button-submitted-box-shadow);
         }
       }
     }
@@ -691,12 +730,13 @@ aside {
       color: var(--black);
       text-decoration: none;
     }
-
-  }
-  
+  }  
 }
+/* ############### Content Styles End ############*/
 
-/* Footer Styles*/
+/* ############################################*/
+/* ########## Footer Styles Start ############*/
+/* ###########################################*/
 footer {
   background-color: var(--black);
 
@@ -707,12 +747,22 @@ footer {
         font-size: 0.8em;
         text-decoration: none;
         color: #ececee;
+        will-change: opacity;
+
+        &:active,
+        &:focus,
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
 }
+/* ########## Footer Styles End ############*/
 
-/* Skip Link */
+/* ############################################*/
+/* ########## Other Styles Start ############*/
+/* ###########################################*/
 .skip_lnk {
   position: absolute;
   padding: 0.2rem 0.7rem;
@@ -722,6 +772,7 @@ footer {
   font-weight: bold;
   font-size: 0.8em;
   z-index: 10;
+  will-change: transform; 
   transform: translate3d(.125rem, -5rem, 0);
   transition: transform .3s ease-out;
 
@@ -730,3 +781,4 @@ footer {
     outline: #fff solid .125rem;
   }
 }
+/* ########## Other Styles End ############*/
