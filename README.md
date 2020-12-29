@@ -23,24 +23,6 @@ We think that makes the interview much more enjoyable and productive.
     <li>Share your awesome solution with us 🦄</li>
 </ol>
 
-
-## Your challenge/task
-
-Imagine you’re our new front-stack developer 🦄 and you’ve just got a feature request from our design team which goes like this:
-
-> Hey Devs!
->
-> We’ve just created a new design for the Lesson page, which includes a new LessonNavigator component.
-> Please check our new design files on zeplin:
-> - https://zpl.io/V107nwQ (the Full project, where you can find detailed specs for components)
-> - https://zpl.io/VKrw1gW (the Lesson page you need to implement)
->
->
-> Zeplin credentials:
->  - Username: `ixdf_unicorn`
->  - Password: `unicorn`
-
-
 ## Technical notes
 
 Basic code-styling rules you can find at `.prettierrc` and `.editorconfig`.
